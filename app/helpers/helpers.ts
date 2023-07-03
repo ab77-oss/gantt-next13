@@ -1,5 +1,5 @@
 import { Dependencies, Tasks } from "@prisma/client";
-import { GanttDataRes, GanttDataPOSTRes } from "../api/gantt.ts/route";
+import { GanttDataRes, GanttDataPOSTRes } from "../api/gantt/route";
 import { prisma } from "../utils/db";
 import { NextResponse } from "next/server";
 export function sendResponse(
@@ -81,16 +81,17 @@ export async function deleteOperation(
 }> {
   try {
     if (table === "tasks") {
-      await prisma.tasks.delete({ where: { id: id } });
+      await prisma.tasks.delete({ where: { ind: id } });
     }
     if (table === "dependencies") {
-      await prisma.dependencies.delete({ where: { id: id } });
+      await prisma.dependencies.delete({ where: { ind: id } });
     }
     return { msg: "deleted", error: null };
   } catch (error) {
     return { msg: "error", error: error };
   }
 }
+
 export async function updateOperation(
   updates: Tasks[] | Dependencies[],
   table: "tasks" | "dependencies"
@@ -100,16 +101,16 @@ export async function updateOperation(
 }> {
   try {
     await Promise.all(
-      updates.map(async ({ id, ...update }) => {
+      updates.map(async ({ ind, ...update }) => {
         if (table === "tasks") {
           await prisma.tasks.update({
-            where: { id },
+            where: { ind },
             data: update,
           });
         }
         if (table === "dependencies") {
           await prisma.dependencies.update({
-            where: { id },
+            where: { ind },
             data: update,
           });
         }

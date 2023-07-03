@@ -3,6 +3,8 @@ import { useRef, LegacyRef } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import { BryntumGantt } from "@bryntum/gantt-react";
+
+
 const GanttDynamic = dynamic(() => import("./components/Gantt"), {
   ssr: false,
   loading: () => {
@@ -20,6 +22,8 @@ const GanttDynamic = dynamic(() => import("./components/Gantt"), {
     );
   },
 });
+
+
 export default function BryntumGanttPage() {
   const ganttRef = useRef() as LegacyRef<BryntumGantt> | undefined;
   return (

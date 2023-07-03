@@ -1,7 +1,5 @@
-
-import  { PrismaClient }from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
-
 async function seed() {
   // clear database first
   await prisma.tasks.deleteMany({});

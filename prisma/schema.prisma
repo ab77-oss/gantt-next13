@@ -11,7 +11,8 @@ datasource db {
 }
 
 model Tasks {
-  id                String    @id @default(auto()) @map("_id") @db.ObjectId
+  ind                String    @id @default(auto()) @map("_id") @db.ObjectId
+  id                String?
   parentId          String?
   name              String?
   startDate         DateTime?
@@ -44,7 +45,8 @@ model Tasks {
 }
 
 model Dependencies {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  ind        String   @id @default(auto()) @map("_id") @db.ObjectId
+  id        String?
   fromEvent String?
   toEvent   String?
   type      Int?     @default(2)
