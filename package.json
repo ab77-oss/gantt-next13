@@ -15,9 +15,7 @@
   "dependencies": {
     "@bryntum/gantt": "npm:@bryntum/gantt-trial@5.3.6",
     "@auth/prisma-adapter": "^1.0.0",
-    "@bryntum/cra-template-typescript-gantt": "^5.3.6",
     "@bryntum/gantt-react": "^5.3.6",
-    "@bryntum/gantt-trial": "^5.3.6",
     "@prisma/client": "^4.15.0",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
