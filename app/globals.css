@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 @import "@bryntum/gantt/gantt.stockholm.css";
+
+body {
+    height: 100vh;
+}

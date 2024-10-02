@@ -7,7 +7,7 @@ const ganttConfig: BryntumGanttProps = {
   barMargin: 10,
 };
 
-const project = new ProjectModel({
+const projectConfig = new ProjectModel({
     taskStore: {
       autoTree: true,
       transformFlatData: true,
@@ -21,4 +21,4 @@ const project = new ProjectModel({
     validateResponse: true,
   });
 
-export { ganttConfig, project };
+export { ganttConfig, projectConfig };
